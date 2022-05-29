@@ -18,3 +18,26 @@ a {
 * {
     box-sizing: border-box;
 }
+
+@layer components {
+    .input {
+        @apply border-[1px] border-grey-1 outline-none px-4 py-3 focus:shadow-input transition-all duration-300;
+    }
+}
+
+@layer utilities {
+    .text-elipsis-2 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .text-elipsis-1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+}
