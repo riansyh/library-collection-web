@@ -1,3 +1,5 @@
+import { CgProfile } from "react-icons/cg";
+
 function Card({ title, tag, author, onClick }) {
     return (
         <div
@@ -12,7 +14,8 @@ function Card({ title, tag, author, onClick }) {
                 {tag}
             </p>
             <p className="font-semibold text-base leading-[20px] text-elipsis-2">{title}</p>
-            <div className="flex">
+            <div className="flex gap-2">
+                <CgProfile size={20} className="text-blue-dark" />
                 <p className="author text-sm font-light text-grey-3 text-elipsis-1">{author}</p>
             </div>
         </div>

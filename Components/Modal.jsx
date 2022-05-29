@@ -1,5 +1,3 @@
-import React from "react";
-
 function Modal({ handleClose, data }) {
     return (
         <>
@@ -22,27 +20,58 @@ function Modal({ handleClose, data }) {
                             </p>
                             <p className="font-semibold text-lg">{data.judul_koleksi}</p>
                             <div className="grid grid-cols-3 gap-y-2 my-4">
-                                <p className="text-base font-semibold opacity-80 col-span-1">Bidang </p>
-                                <p className="text-base font-medium opacity-80 col-span-2">: {data.bidang} </p>
+                                <p className="text-base font-semibold opacity-80 col-span-1">
+                                    Bidang{" "}
+                                </p>
+                                <p className="text-base font-medium opacity-80 col-span-2">
+                                    : {data.bidang}{" "}
+                                </p>
 
-                                <p className="text-base font-semibold opacity-80 col-span-1">Penulis </p>
+                                <p className="text-base font-semibold opacity-80 col-span-1">
+                                    Penulis{" "}
+                                </p>
                                 <p className="text-base font-medium opacity-80 col-span-2">
                                     : {data.nama_penulis}{" "}
                                 </p>
 
-                                <p className="text-base font-semibold opacity-80 col-span-1">Bahasa </p>
-                                <p className="text-base font-medium opacity-80 col-span-2">: {data.bahasa} </p>
+                                <p className="text-base font-semibold opacity-80 col-span-1">
+                                    Tahun terbit{" "}
+                                </p>
+                                <p className="text-base font-medium opacity-80 col-span-2">
+                                    : {data.tahun_terbit}{" "}
+                                </p>
+                                
+                                <p className="text-base font-semibold opacity-80 col-span-1">
+                                    Bahasa{" "}
+                                </p>
+                                <p className="text-base font-medium opacity-80 col-span-2">
+                                    : {data.bahasa}{" "}
+                                </p>
 
-                                <p className="text-base font-semibold opacity-80 col-span-1">Halaman </p>
-                                <p className="text-base font-medium opacity-80 col-span-2">: {data.halaman} halaman</p>
 
-                                <p className="text-base font-semibold opacity-80 col-span-1">Penerbit </p>
+                                <p className="text-base font-semibold opacity-80 col-span-1">
+                                    Halaman{" "}
+                                </p>
+                                <p className="text-base font-medium opacity-80 col-span-2">
+                                    : {data.halaman} halaman
+                                </p>
+
+                                <p className="text-base font-semibold opacity-80 col-span-1">
+                                    Penerbit{" "}
+                                </p>
                                 <p className="text-base font-medium opacity-80 col-span-2">
                                     : {data.penerbit}
                                 </p>
                             </div>
                             <div className="button h-full flex justify-center">
-                                <a href={data.link} target="_blank" rel="noopener noreferrer" className="block px-5 py-3 rounded-full bg-blue-semidark text-white w-fit hover:bg-blue-dark transition-all duration-300">Lihat {data.jenis} Lengkap</a>                                
+                                <a
+                                    href={data.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block px-5 py-3 rounded-full bg-blue-semidark text-white w-fit hover:bg-blue-dark transition-all duration-300"
+                                >
+                                    Lihat {data.jenis} Lengkap
+                                </a>
                             </div>
                         </div>
                     </div>
