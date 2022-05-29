@@ -162,7 +162,9 @@ export async function getServerSideProps({ query }) {
     const keyword = query.keyword ? query.keyword : "";
     const type = query.type ? getQuery(query.type) : "o";
 
-    const rdfUrl = "http://localhost:3030/library-collections/query";
+    console.log(process.env.SPARQL_URL)
+
+    const rdfUrl = process.env.SPARQL_URL;
 
     const queryRdf = `
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
