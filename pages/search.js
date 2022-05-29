@@ -3,6 +3,7 @@ const d3 = require("d3-sparql");
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Card from "../Components/Card";
+import Modal from "../Components/Modal";
 
 function Search({ keyword, data }) {
     const [isLoading, setIsLoading] = useState(false);
@@ -23,6 +24,7 @@ function Search({ keyword, data }) {
 
     const handleClick = (data) => {
         setDetailData(data);
+        setShowModal(true);
     };
 
     return (
@@ -60,14 +62,14 @@ function Search({ keyword, data }) {
                         </h2>
                     ) : (
                         <h2 className="font-normal text-lg text-blue-semidark text-center">
-                            Menampilkan hasil pencarian untuk "
-                            <span className="font-semibold">{Router.query.keyword}</span>"
+                            Menampilkan hasil pencarian untuk &quot;
+                            <span className="font-semibold">{Router.query.keyword}</span>&quot;
                         </h2>
                     )
                 ) : (
                     <h2 className="font-normal text-lg text-blue-semidark text-center">
-                        Tidak dapat menemukan koleksi jurnal/skripsi untuk "
-                        <span className="font-semibold">{Router.query.keyword}</span>"
+                        Tidak dapat menemukan koleksi jurnal/skripsi untuk &quot;
+                        <span className="font-semibold">{Router.query.keyword}</span>&quot;
                     </h2>
                 )}
 
@@ -88,6 +90,8 @@ function Search({ keyword, data }) {
                     © 2022 RIAN FEBRIANSYAH
                 </p>
             </footer>
+
+            {showModal && <Modal data={detailData} handleClose={() => setShowModal(false)} />}
         </section>
     );
 }
