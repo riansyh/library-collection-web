@@ -1,0 +1,400 @@
+@prefix : <http://www.semanticweb.org/user/ontologies/2022/4/library#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/user/ontologies/2022/4/library> .
+
+<http://www.semanticweb.org/user/ontologies/2022/4/library> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#dari_jurusan
+:dari_jurusan rdf:type owl:ObjectProperty ;
+              rdfs:domain :Dosen ,
+                          :Mahasiswa ;
+              rdfs:range :Jurusan .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#diterbitkan
+:diterbitkan rdf:type owl:ObjectProperty ;
+             owl:inverseOf :menerbitkan ;
+             rdfs:domain :Jurnal ,
+                         :Skripsi ;
+             rdfs:range :Penerbit .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#ditulis
+:ditulis rdf:type owl:ObjectProperty ;
+         owl:inverseOf :menulis ;
+         rdfs:domain :Jurnal ,
+                     :Skripsi ;
+         rdfs:range :Dosen ,
+                    :Mahasiswa .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#koleksi_dari
+:koleksi_dari rdf:type owl:ObjectProperty ;
+              owl:inverseOf :punya_koleksi ;
+              rdfs:domain :Jurnal ,
+                          :Skripsi ;
+              rdfs:range :Jurusan .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#menerbitkan
+:menerbitkan rdf:type owl:ObjectProperty ;
+             rdfs:domain :Penerbit ;
+             rdfs:range :Jurnal ,
+                        :Skripsi .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#menulis
+:menulis rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#punya_koleksi
+:punya_koleksi rdf:type owl:ObjectProperty ;
+               rdfs:domain :Jurusan ;
+               rdfs:range :Jurnal ,
+                          :Skripsi .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#bahasa
+:bahasa rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#email
+:email rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#halaman
+:halaman rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#jenis
+:jenis rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#judul
+:judul rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#jumlah
+:jumlah rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#link
+:link rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#nama
+:nama rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#tahun_terbit
+:tahun_terbit rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#website
+:website rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Dosen
+:Dosen rdf:type owl:Class ;
+       rdfs:subClassOf :Penulis .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Jurnal
+:Jurnal rdf:type owl:Class ;
+        rdfs:subClassOf :Koleksi .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Jurusan
+:Jurusan rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Koleksi
+:Koleksi rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Mahasiswa
+:Mahasiswa rdf:type owl:Class ;
+           rdfs:subClassOf :Penulis .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Penerbit
+:Penerbit rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Penulis
+:Penulis rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Skripsi
+:Skripsi rdf:type owl:Class ;
+         rdfs:subClassOf :Koleksi .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Dsn_1
+:Dsn_1 rdf:type owl:NamedIndividual ,
+                :Dosen ;
+       :menulis :Jurnal_1 ,
+                :Jurnal_2 ;
+       :email "roni@unpad.ac.id" ;
+       :nama "Roni Setiawan, M.Kom." .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Dsn_2
+:Dsn_2 rdf:type owl:NamedIndividual ,
+                :Dosen ;
+       :menulis :Jurnal_1 ,
+                :Jurnal_2 ;
+       :email "jonathan@unpad.ac.id" ;
+       :nama "Jonathan Thomas, MT" .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Dsn_3
+:Dsn_3 rdf:type owl:NamedIndividual ,
+                :Dosen ;
+       :menulis :Jurnal_2 ;
+       :email "wiwin@unpad.ac.id" ;
+       :nama "Wiwin Winarti, S.Pd., M.Kom." .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Jurnal_1
+:Jurnal_1 rdf:type owl:NamedIndividual ;
+          :diterbitkan :Penerbit_1 ;
+          :ditulis :Dsn_1 ,
+                   :Dsn_2 ;
+          :koleksi_dari :Jurusan_1 ;
+          :bahasa "Bahasa Indonesia" ;
+          :halaman 7 ;
+          :jenis "Jurnal" ;
+          :judul "Perancangan Aplikasi Sistem Pakar Untuk Mendiagnosa Defisiensi Nutrisi Tanaman Pada Hidroponik Pertanian Berbasis Web" ;
+          :link "http://journal.umg.ac.id/index.php/e-link/article/view/2956" ;
+          :tahun_terbit 2020 .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Jurnal_2
+:Jurnal_2 rdf:type owl:NamedIndividual ;
+          :diterbitkan :Penerbit_1 ;
+          :ditulis :Dsn_1 ,
+                   :Dsn_2 ,
+                   :Dsn_3 ;
+          :koleksi_dari :Jurusan_1 ;
+          :bahasa "Bahasa Inggris" ;
+          :halaman 5 ;
+          :jenis "Jurnal" ;
+          :judul "Penerapan Metode User Centered Design (UCD) Pada Aplikasi Katalog Wisata Kuliner Berbasis Web" ;
+          :link "https://ejournal.poltekkes-smg.ac.id/ojs/index.php/link/article/view/6995" ;
+          :tahun_terbit 2021 .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Jurnal_3
+:Jurnal_3 rdf:type owl:NamedIndividual ;
+          :diterbitkan :Penerbit_1 ;
+          :ditulis :Mhs_1 ,
+                   :Mhs_3 ;
+          :koleksi_dari :Jurusan_1 ;
+          :bahasa "Bahasa Inggris" ;
+          :halaman 32 ;
+          :jenis "Jurnal" ;
+          :judul "Rancang Bangun Sistem Absensi Karyawan Industri Rumahan Menggunakan E-KTP Berbasis Web" ;
+          :link "http://journal.umg.ac.id/index.php/e-link/article/view/3107" ;
+          :tahun_terbit 2021 .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Jurnal_4
+:Jurnal_4 rdf:type owl:NamedIndividual ;
+          :diterbitkan :Penerbit_1 ;
+          :ditulis :Mhs_3 ,
+                   :Mhs_5 ;
+          :koleksi_dari :Jurusan_2 ;
+          :bahasa "Bahasa Indonesia" ;
+          :halaman 12 ;
+          :jenis "Jurnal" ;
+          :judul "Diagnosa Penyakit Tanaman Hias Menggunakan Metode Certainty Factor Berbasi IoT" ;
+          :link "http://journal.umg.ac.id/index.php/e-link/article/view/2731" ;
+          :tahun_terbit 2020 .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Jurnal_5
+:Jurnal_5 rdf:type owl:NamedIndividual ;
+          :diterbitkan :Penerbit_2 ;
+          :ditulis :Mhs_1 ,
+                   :Mhs_2 ,
+                   :Mhs_4 ;
+          :koleksi_dari :Jurusan_2 ;
+          :bahasa "Bahasa Inggris" ;
+          :halaman 8 ;
+          :jenis "Jurnal" ;
+          :judul "Pemetaan Daerah Ancaman Tanah Longsor di Kota Manado" ;
+          :link "http://journal.umg.ac.id/index.php/e-link/article/view/2096" ;
+          :tahun_terbit 2021 .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Jurusan_1
+:Jurusan_1 rdf:type owl:NamedIndividual ,
+                    :Jurusan ;
+           :punya_koleksi :Jurnal_1 ,
+                          :Jurnal_2 ,
+                          :Jurnal_3 ,
+                          :Skripsi_1 ,
+                          :Skripsi_2 ;
+           :nama "Teknik Informatika" .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Jurusan_2
+:Jurusan_2 rdf:type owl:NamedIndividual ,
+                    :Jurusan ;
+           :punya_koleksi :Jurnal_4 ,
+                          :Jurnal_5 ,
+                          :Skripsi_3 ,
+                          :Skripsi_4 ;
+           :nama "Teknik Elektro" .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Mhs_1
+:Mhs_1 rdf:type owl:NamedIndividual ,
+                :Mahasiswa ;
+       :dari_jurusan :Jurusan_1 ;
+       :menulis :Jurnal_3 ,
+                :Jurnal_5 ,
+                :Skripsi_1 ;
+       :email "anton@gmail.com" ;
+       :nama "Anton Darmawan" .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Mhs_2
+:Mhs_2 rdf:type owl:NamedIndividual ,
+                :Mahasiswa ;
+       :dari_jurusan :Jurusan_1 ;
+       :menulis :Jurnal_5 ,
+                :Skripsi_2 ;
+       :email "nindy@gmail.com" ;
+       :nama "Nindy Setia" .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Mhs_3
+:Mhs_3 rdf:type owl:NamedIndividual ,
+                :Mahasiswa ;
+       :dari_jurusan :Jurusan_1 ;
+       :menulis :Jurnal_3 ,
+                :Jurnal_4 ;
+       :email "bayu.nugraha@gmail.com" ;
+       :nama "Bayu Nugraha" .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Mhs_4
+:Mhs_4 rdf:type owl:NamedIndividual ,
+                :Mahasiswa ;
+       :dari_jurusan :Jurusan_2 ;
+       :menulis :Jurnal_5 ,
+                :Skripsi_3 ;
+       :email "rfebriansyah22@gmail.com" ;
+       :nama "Rian Febriansyah" .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Mhs_5
+:Mhs_5 rdf:type owl:NamedIndividual ,
+                :Mahasiswa ;
+       :dari_jurusan :Jurusan_2 ;
+       :menulis :Jurnal_4 ,
+                :Skripsi_4 ;
+       :email "nurul.maul@gmail.com" ;
+       :nama "Nurul Maulani" .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Penerbit_1
+:Penerbit_1 rdf:type owl:NamedIndividual ,
+                     :Penerbit ;
+            :menerbitkan :Jurnal_1 ,
+                         :Jurnal_2 ,
+                         :Jurnal_3 ,
+                         :Jurnal_4 ,
+                         :Skripsi_1 ,
+                         :Skripsi_2 ;
+            :email "informatika@unpad.ac.id" ;
+            :nama "Informatika Unpad" ;
+            :website "informatika.unpad.ac.id" .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Penerbit_2
+:Penerbit_2 rdf:type owl:NamedIndividual ,
+                     :Penerbit ;
+            :menerbitkan :Jurnal_5 ,
+                         :Skripsi_3 ,
+                         :Skripsi_4 ;
+            :email "elektro@unpad.ac.id" ;
+            :nama "Elektro Unpad" ;
+            :website "elektro@unpad.ac.id" .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Skripsi_1
+:Skripsi_1 rdf:type owl:NamedIndividual ;
+           :diterbitkan :Penerbit_1 ;
+           :ditulis :Mhs_1 ;
+           :koleksi_dari :Jurusan_1 ;
+           :bahasa "Bahasa Indonesia" ;
+           :halaman 76 ;
+           :jenis "Skripsi" ;
+           :judul "Perancangan Sistem Informasi Manajemen Rumah Sakit Berbasis Web" ;
+           :link "http://journal.umg.ac.id/index.php/e-link/article/view/3027" ;
+           :tahun_terbit 2020 .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Skripsi_2
+:Skripsi_2 rdf:type owl:NamedIndividual ;
+           :diterbitkan :Penerbit_1 ;
+           :ditulis :Mhs_2 ;
+           :koleksi_dari :Jurusan_1 ;
+           :bahasa "Bahasa Indonesia" ;
+           :halaman 123 ;
+           :jenis "Skripsi" ;
+           :judul "Rancang Bangun Aplikasi Alat Musik Kolintang Menggunakan Augmented Reality Berbasis Android" ;
+           :link "http://journal.umg.ac.id/index.php/e-link/article/view/2956" ;
+           :tahun_terbit 2020 .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Skripsi_3
+:Skripsi_3 rdf:type owl:NamedIndividual ;
+           :diterbitkan :Penerbit_2 ;
+           :ditulis :Mhs_4 ;
+           :koleksi_dari :Jurusan_2 ;
+           :bahasa "Bahasa Indonesia" ;
+           :halaman 43 ;
+           :jenis "Skripsi" ;
+           :judul "Analisis Arus Konstan Pada Solar Cell dengan Menggungakan Dual Axis Tracking" ;
+           :link "http://journal.umg.ac.id/index.php/e-link/article/view/3081" ;
+           :tahun_terbit 2020 .
+
+
+###  http://www.semanticweb.org/user/ontologies/2022/4/library#Skripsi_4
+:Skripsi_4 rdf:type owl:NamedIndividual ;
+           :diterbitkan :Penerbit_2 ;
+           :ditulis :Mhs_5 ;
+           :koleksi_dari :Jurusan_2 ;
+           :bahasa "Bahasa Indonesia" ;
+           :halaman 98 ;
+           :jenis "Skripsi" ;
+           :judul "Penerapan Liveness Sebagai Anti-Spoofing Citra Digital Pada Sistem Keamanan Akses Kontrol Ruang Server Berbasis Raspberry Pi" ;
+           :link "http://journal.umg.ac.id/index.php/e-link/article/view/3333" ;
+           :tahun_terbit 2021 .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
