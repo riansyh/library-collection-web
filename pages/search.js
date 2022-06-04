@@ -91,7 +91,7 @@ function Search({ keyword, data }) {
                         <div className="flex gap-2 items-center">
                             <BiSearchAlt size={24} className="text-blue-semidark" />
                             <h2 className="font-normal text-lg text-blue-semidark text-center">
-                                Menampilkan hasil pencarian untuk &quot;
+                                Menampilkan hasil pencarian untuk {Router.query.type !== "all" && Router.query.type} &quot;
                                 <span className="font-semibold">{Router.query.keyword}</span>&quot;
                             </h2>
                         </div>
@@ -101,7 +101,7 @@ function Search({ keyword, data }) {
                         <BiXCircle size={24} className="text-blue-semidark" />
 
                         <h2 className="font-normal text-lg text-blue-semidark text-center">
-                            Tidak dapat menemukan koleksi jurnal/skripsi untuk &quot;
+                            Tidak dapat menemukan koleksi jurnal/skripsi untuk {Router.query.type !== "all" && Router.query.type} &quot;
                             <span className="font-semibold">{Router.query.keyword}</span>&quot;
                         </h2>
                     </div>
